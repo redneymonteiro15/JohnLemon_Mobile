@@ -28,4 +28,17 @@ public class SceneController : MonoBehaviour
     {
         painel.SetActive(true);
     }
+
+    public void Resume()
+    {
+        painel.SetActive(false);
+    }
+    public void Retornar()
+    {
+        SceneManager.LoadScene(scene);
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
