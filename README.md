@@ -5,8 +5,8 @@
  ## :hammer: Melhorias:
 - [ ] Mais dois cenarios
 - [ ] Adicionar mais personagem
-- [ ] Suporte a mobile
-- [ ] Menu Principal
+- [x] Suporte a mobile
+- [x] Menu Principal
 - [ ] Niveis
 
 ## 👤 Lista dos desenvolvedores do projeto:
