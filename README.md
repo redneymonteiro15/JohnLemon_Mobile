@@ -12,7 +12,7 @@
 ## 👤 Lista dos desenvolvedores do projeto:
 * [Redney Monteiro](https://github.com/RedneyMonteiro15)
 * [Jumara Fernandes](https://github.com/maura2020)
-* [Leonardo Santana](https://github.com/LeoSantana24)
+* [Nicodemos Vaz](https://github.com)
 
 ## :books: Link do Site
 Para aceder ao site, basta [Clicar Aqui!!!](https://redneymonteiro15.github.io/Jurele/)
