@@ -6,19 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public string level1, level2, level3;
-    public GameObject unlockLevel2, unlockLevel3;
     public bool lockLevel2 = true, lockLevel3 = true;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void CarregarLevel1()
     {
@@ -43,13 +32,11 @@ public class LevelManager : MonoBehaviour
     public void UnlockLevel2()
     {
         lockLevel2 = false;
-        unlockLevel2.SetActive(false);
     }
 
     public void UnlockLevel3()
     {
         lockLevel3 = false;
-        unlockLevel3.SetActive(false);
     }
 
 

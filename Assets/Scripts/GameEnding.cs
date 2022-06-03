@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameEnding : MonoBehaviour
 {
+    public string scene;
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;
@@ -56,7 +57,7 @@ public class GameEnding : MonoBehaviour
         {
             if (doRestart)
             {
-                SceneManager.LoadScene (0);
+                SceneManager.LoadScene (scene);
             }
             else
             {
