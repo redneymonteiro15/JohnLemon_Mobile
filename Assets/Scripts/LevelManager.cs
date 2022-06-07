@@ -6,8 +6,16 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public string level1, level2, level3;
-    public bool lockLevel2 = true, lockLevel3 = true;
-    // Start is called before the first frame update
+    public int lockLevel2 = 1, lockLevel3 = 1;
+    public static LevelManager instance;
+
+    void Awake()
+    {
+        instance = this;
+        lockLevel2 = PlayerPrefs.GetInt("unlocked2");
+        lockLevel3 = PlayerPrefs.GetInt("unlocked3");
+    }
+
 
     public void CarregarLevel1()
     {
@@ -16,29 +24,17 @@ public class LevelManager : MonoBehaviour
 
     public void CarregarLevel2()
     {
-        if(!lockLevel2)
+        if(lockLevel2==0)
         {
             SceneManager.LoadScene(level2);
         }
     }
     public void CarregarLevel3()
     {
-        if(!lockLevel3)
+        if(lockLevel3==0)
         {
             SceneManager.LoadScene(level3);
         }
     }
-
-    public void UnlockLevel2()
-    {
-        lockLevel2 = false;
-    }
-
-    public void UnlockLevel3()
-    {
-        lockLevel3 = false;
-    }
-
-
     
 }

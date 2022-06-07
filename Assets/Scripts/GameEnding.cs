@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameEnding : MonoBehaviour
 {
     public string scene;
+    public string locked;
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;
@@ -12,10 +13,12 @@ public class GameEnding : MonoBehaviour
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
 
+
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
+
     void OnTriggerEnter (Collider other)
     {
         if (other.gameObject == player)
@@ -55,13 +58,14 @@ public class GameEnding : MonoBehaviour
 
         if (m_Timer > fadeDuration + displayImageDuration)
         {
-            if (doRestart)
+            if(doRestart)
             {
-                SceneManager.LoadScene (scene);
+                SceneManager.LoadScene (0);
             }
             else
             {
-                Application.Quit ();
+                PlayerPrefs.SetInt(locked, 0);
+                SceneManager.LoadScene ("Niveis");
             }
         }
     }

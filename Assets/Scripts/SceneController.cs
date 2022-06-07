@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class SceneController : MonoBehaviour
 {
     public string scene;
-    public GameObject painel;
+    public GameObject painel, painelAudio, painelPause;
+    float volumeMaster;
+
+    [SerializeField] private AudioMixer myAudioListen;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +36,9 @@ public class SceneController : MonoBehaviour
     public void Resume()
     {
         painel.SetActive(false);
+        painelAudio.SetActive(false);
     }
-    public void Retornar()
+    public void Restart()
     {
         SceneManager.LoadScene(scene);
     }
@@ -41,4 +46,22 @@ public class SceneController : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Audio()
+    {
+        painelPause.SetActive(false);
+        painelAudio.SetActive(true);
+    }
+
+    public void Voltar()
+    {
+        painelPause.SetActive(true);
+        painelAudio.SetActive(false);
+    }
+
+    public void MasterVolume(float volume)
+    {
+        myAudioListen.SetFloat("MasterVolume", Mathf.Log10(volume)*20);
+        
+    }
+
 }
