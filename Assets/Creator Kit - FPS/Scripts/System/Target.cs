@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Target : MonoBehaviour
 {
     public GameObject player;
+    public GameObject boss;
+    public NavMeshAgent navMesh;
+    public bool attack = false;
+
+    public float timeToLife;
+    public Text txtTempo;
+    public GameEnding end;
+
 
     public float health = 5.0f;
     public int pointValue;
@@ -24,19 +33,19 @@ public class Target : MonoBehaviour
 
     void Awake()
     {
-        Vector3 position = transform.position;
-        DestroyedEffect.transform.position = position;
-        DestroyedEffect.Play();
-        DestroyedEffect.time = 1f;
         Helpers.RecursiveLayerChange(transform, LayerMask.NameToLayer("Target"));
     }
 
     void Start()
     {
-        Vector3 position = transform.position;
+        navMesh = GetComponent<NavMeshAgent>();
+
+        DestroyedEffect.Stop();
+
+        /*Vector3 position = transform.position;
         DestroyedEffect.transform.position = position;
         DestroyedEffect.Play();
-        DestroyedEffect.time = 1f;
+        DestroyedEffect.time = 1f;*/
 
         m_CurrentHealth = health;
 
@@ -47,18 +56,43 @@ public class Target : MonoBehaviour
             IdleSource.time = Random.Range(0.0f, IdleSource.clip.length);
     }
 
+    void Update()
+    {
+        if(attack)
+        {
+            navMesh.destination = player.transform.position;
+
+
+            if(timeToLife > 0)
+            { 
+                timeToLife -= Time.deltaTime;
+                txtTempo.text = "Falta " + (int)timeToLife + "s";
+            } 
+            else if(timeToLife == -10)
+            {
+                DestroyedEffect.Stop();
+            }
+            else if(timeToLife < 0)
+            {
+                if(!m_Destroyed)
+                {
+                    Deap();
+                    timeToLife = -10;
+                }
+                
+            }
+        } 
+        
+    }
+
     public void Got(float damage)
     {
-        Vector3 position = transform.position;
+        //Vector3 position = transform.position;
 
         /*var effect = DestroyedEffect;
         effect.time = 0.0f;
         effect.Play();
         effect.transform.position = position;*/
-
-        
-
-        m_CurrentHealth -= damage;
         
         if(HitPlayer != null)
             HitPlayer.PlayRandom();
@@ -66,31 +100,49 @@ public class Target : MonoBehaviour
         if(m_CurrentHealth > 0)
             return;
 
-        
+   
         
         //the audiosource of the target will get destroyed, so we need to grab a world one and play the clip through it
         if (HitPlayer != null)
         {
             var source = WorldAudioPool.GetWorldSFXSource();
-            source.transform.position = position;
+            //source.transform.position = position;
             source.pitch = HitPlayer.source.pitch;
             source.PlayOneShot(HitPlayer.GetRandomClip());
         }
 
         
-
+        end.End();
+        
         m_Destroyed = true;
         
         gameObject.SetActive(false);
+
+        
     
         GameSystem.Instance.TargetDestroyed(pointValue);
+
+        
     }
 
     void OnTriggerEnter (Collider other)
     {
         if (other.gameObject == player)
         {
-            Got(1);
+            attack = true;
         }
+    }
+
+    void Deap()
+    {
+        boss.SetActive(false);
+
+        DestroyedEffect.Play();
+
+        HitPlayer.PlayRandom();
+     
+        m_Destroyed = true;
+    
+        GameSystem.Instance.TargetDestroyed(pointValue);
     }
 }

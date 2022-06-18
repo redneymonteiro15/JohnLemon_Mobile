@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public string level1, level2, level3;
-    public int lockLevel2 = 1, lockLevel3 = 1;
-    public static LevelManager instance;
-
-    void Awake()
+    public Button[] button;
+    public Text text;
+    
+    private void Update()
     {
-        instance = this;
-        lockLevel2 = PlayerPrefs.GetInt("unlocked2");
-        lockLevel3 = PlayerPrefs.GetInt("unlocked3");
+        for (int i = 0; i < button.Length; i++)
+        {
+            Debug.Log("Fase " + PlayerPrefs.GetInt("faseCompletada"));
+            if(i+2 > PlayerPrefs.GetInt("faseCompletada"))
+            {
+                button[i].interactable = false;
+            }
+        }
+        text.text = "Total Fruit: " + PlayerPrefs.GetInt("totalFruit");
     }
 
 
@@ -24,17 +31,14 @@ public class LevelManager : MonoBehaviour
 
     public void CarregarLevel2()
     {
-        if(lockLevel2==0)
-        {
-            SceneManager.LoadScene(level2);
-        }
+        SceneManager.LoadScene(level2);
+        
     }
     public void CarregarLevel3()
     {
-        if(lockLevel3==0)
-        {
-            SceneManager.LoadScene(level3);
-        }
+
+        SceneManager.LoadScene(level3);
+    
     }
     
 }

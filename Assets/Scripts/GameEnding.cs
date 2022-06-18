@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System;
 
 public class GameEnding : MonoBehaviour
 {
     public string scene;
-    public string locked;
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;
@@ -12,6 +13,8 @@ public class GameEnding : MonoBehaviour
     public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
+
+    public Text text;
 
 
     bool m_IsPlayerAtExit;
@@ -58,15 +61,23 @@ public class GameEnding : MonoBehaviour
 
         if (m_Timer > fadeDuration + displayImageDuration)
         {
-            if(doRestart)
+            if(m_IsPlayerAtExit)
             {
-                SceneManager.LoadScene (0);
+                if(SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("faseCompletada"))
+                {
+                    PlayerPrefs.SetInt("faseCompletada", SceneManager.GetActiveScene().buildIndex);
+                    PlayerPrefs.Save();
+                }
             }
-            else
-            {
-                PlayerPrefs.SetInt(locked, 0);
-                SceneManager.LoadScene ("Niveis");
-            }
+            int total = Convert.ToInt32(text.text) + PlayerPrefs.GetInt("totalFruit");
+            PlayerPrefs.SetInt("totalFruit", total);
+            SceneManager.LoadScene ("Niveis");
         }
+    }
+
+    public void End()
+    {
+        m_IsPlayerAtExit = true;
+        EndLevel (exitBackgroundImageCanvasGroup, false, exitAudio);
     }
 }

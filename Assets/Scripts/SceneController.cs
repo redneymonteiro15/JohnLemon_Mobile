@@ -8,21 +8,15 @@ public class SceneController : MonoBehaviour
 {
     public string scene;
     public GameObject painel, painelAudio, painelPause;
-    float volumeMaster;
 
-    [SerializeField] private AudioMixer myAudioListen;
 
     // Start is called before the first frame update
     void Start()
-    {
-        
-    }
+    {}
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
+    {}
     
     public void Carregar()
     {
@@ -56,12 +50,6 @@ public class SceneController : MonoBehaviour
     {
         painelPause.SetActive(true);
         painelAudio.SetActive(false);
-    }
-
-    public void MasterVolume(float volume)
-    {
-        myAudioListen.SetFloat("MasterVolume", Mathf.Log10(volume)*20);
-        
     }
 
 }
