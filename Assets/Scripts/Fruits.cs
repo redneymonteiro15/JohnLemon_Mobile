@@ -22,7 +22,7 @@ public class Fruits : MonoBehaviour
 
     public void SetFruit()
     {
-        int num = Int32.Parse(text.text);
+        int num = Convert.ToInt32(text.text);
         num++;
         text.text = ""+num;
     }

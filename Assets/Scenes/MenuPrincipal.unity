@@ -437,6 +437,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 166456, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 172732, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -485,6 +489,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400490, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
     - target: {fileID: 11407154, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -529,10 +538,20 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11444820, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
     - target: {fileID: 11447508, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_Text
       value: John Lemon
       objectReference: {fileID: 0}
+    - target: {fileID: 11447508, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
     - target: {fileID: 11450388, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_MinValue
       value: 0.0001
@@ -561,13 +580,41 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuPrincipal, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 11458820, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
+    - target: {fileID: 11466958, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
+    - target: {fileID: 11466958, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11475436, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_Text
       value: "Come\xE7ar"
       objectReference: {fileID: 0}
+    - target: {fileID: 11475436, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
     - target: {fileID: 11480518, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_Text
       value: Menu Principal
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480518, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
+    - target: {fileID: 11480518, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11492114, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_Type
@@ -592,6 +639,16 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 11496104, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
+    - target: {fileID: 11497452, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
     - target: {fileID: 11498602, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}
       propertyPath: m_MinValue
       value: 0.0001
@@ -1037,6 +1094,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 96.306
       objectReference: {fileID: 0}
+    - target: {fileID: 3914425803132106837, guid: 861b75cfe59c43d45bdc2d2a2b73b221,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: bce86b55a79174a42b40200202520ec3,
+        type: 3}
+    - target: {fileID: 3914425803132106837, guid: 861b75cfe59c43d45bdc2d2a2b73b221,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7257429836410024964, guid: 861b75cfe59c43d45bdc2d2a2b73b221,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1046,6 +1114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 1006.56836
+      objectReference: {fileID: 0}
+    - target: {fileID: 8356314717001620879, guid: 861b75cfe59c43d45bdc2d2a2b73b221,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 861b75cfe59c43d45bdc2d2a2b73b221, type: 3}

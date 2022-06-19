@@ -5,7 +5,6 @@ using System;
 
 public class GameEnding : MonoBehaviour
 {
-    public string scene;
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;

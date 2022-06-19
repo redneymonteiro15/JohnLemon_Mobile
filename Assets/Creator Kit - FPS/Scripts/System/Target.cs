@@ -4,11 +4,13 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using System.Threading;
 
 public class Target : MonoBehaviour
 {
     public GameObject player;
     public GameObject boss;
+    public GameObject bossCollider;
     public NavMeshAgent navMesh;
     public bool attack = false;
 
@@ -16,8 +18,6 @@ public class Target : MonoBehaviour
     public Text txtTempo;
     public GameEnding end;
 
-
-    public float health = 5.0f;
     public int pointValue;
 
     public ParticleSystem DestroyedEffect;
@@ -29,7 +29,6 @@ public class Target : MonoBehaviour
     public bool Destroyed => m_Destroyed;
 
     public bool m_Destroyed = false;
-    public float m_CurrentHealth;
 
     void Awake()
     {
@@ -41,16 +40,6 @@ public class Target : MonoBehaviour
         navMesh = GetComponent<NavMeshAgent>();
 
         DestroyedEffect.Stop();
-
-        /*Vector3 position = transform.position;
-        DestroyedEffect.transform.position = position;
-        DestroyedEffect.Play();
-        DestroyedEffect.time = 1f;*/
-
-        m_CurrentHealth = health;
-
-        if(DestroyedEffect)
-            PoolSystem.Instance.InitPool(DestroyedEffect, 16);  
         
         if(IdleSource != null)
             IdleSource.time = Random.Range(0.0f, IdleSource.clip.length);
@@ -77,7 +66,6 @@ public class Target : MonoBehaviour
                 if(!m_Destroyed)
                 {
                     Deap();
-                    timeToLife = -10;
                 }
                 
             }
@@ -94,7 +82,7 @@ public class Target : MonoBehaviour
         effect.Play();
         effect.transform.position = position;*/
         
-        if(HitPlayer != null)
+        /*if(HitPlayer != null)
             HitPlayer.PlayRandom();
         
         if(m_CurrentHealth > 0)
@@ -112,7 +100,7 @@ public class Target : MonoBehaviour
         }
 
         
-        end.End();
+        
         
         m_Destroyed = true;
         
@@ -120,7 +108,7 @@ public class Target : MonoBehaviour
 
         
     
-        GameSystem.Instance.TargetDestroyed(pointValue);
+        GameSystem.Instance.TargetDestroyed(pointValue);*/
 
         
     }
@@ -135,14 +123,30 @@ public class Target : MonoBehaviour
 
     void Deap()
     {
-        boss.SetActive(false);
-
         DestroyedEffect.Play();
 
         HitPlayer.PlayRandom();
+
+        boss.SetActive(false);
+        bossCollider.SetActive(false);
      
         m_Destroyed = true;
+
+        float tempo = 10;
+
+        while (true)
+        {
+            tempo -= Time.deltaTime;
+            if(tempo < 0)
+            {
+                break;
+            }
+        }
+
+        end.End();
     
         GameSystem.Instance.TargetDestroyed(pointValue);
     }
+
+    
 }

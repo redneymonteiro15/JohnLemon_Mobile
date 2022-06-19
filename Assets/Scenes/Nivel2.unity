@@ -19550,6 +19550,16 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 0.99352026
       objectReference: {fileID: 0}
+    - target: {fileID: 1756368707777190442, guid: 4be89240744ab2f49b0b7a75f7f8e23f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 204.2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756368707777190442, guid: 4be89240744ab2f49b0b7a75f7f8e23f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 212.8999
+      objectReference: {fileID: 0}
     - target: {fileID: 2677713615164144574, guid: 4be89240744ab2f49b0b7a75f7f8e23f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19559,6 +19569,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 10.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449531170623843423, guid: 4be89240744ab2f49b0b7a75f7f8e23f,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3470138136249233191, guid: 4be89240744ab2f49b0b7a75f7f8e23f,
         type: 3}
@@ -19653,7 +19668,7 @@ PrefabInstance:
     - target: {fileID: 6678859212044717509, guid: 4be89240744ab2f49b0b7a75f7f8e23f,
         type: 3}
       propertyPath: scene
-      value: Niveis2
+      value: Ni
       objectReference: {fileID: 0}
     - target: {fileID: 6678859212044717509, guid: 4be89240744ab2f49b0b7a75f7f8e23f,
         type: 3}
