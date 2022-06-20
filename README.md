@@ -12,6 +12,11 @@ Pegamos o projeto e transforma-mos para mobile, colocando um joystick para const
 - [x] Sistema de volume (Audio mixer)
 - [x] Sistema de bloquear e desbloquear niveis
 
+
+## ⚓ Link do apk:
+Para baixar o jogo, [Clicar Aqui!!!](https://github.com/RedneyMonteiro15/JohnLemon_Mobile)
+
+
 ## 👤 Lista dos desenvolvedores do projeto:
 * [Redney Monteiro](https://github.com/RedneyMonteiro15)
 * [Jumara Fernandes](https://github.com/maura2020)
