@@ -5,16 +5,17 @@ Pegamos o projeto e transforma-mos para mobile, colocando um joystick para const
  
  ## :hammer: Melhorias:
 - [x] Mais dois cenarios
-- [x] Adicionar mais personagem
+- [x] Adicionar mais inimigos
 - [x] Suporte a mobile
 - [x] Menu Principal
 - [x] Niveis (3 niveis)
 - [x] Sistema de volume (Audio mixer)
 - [x] Sistema de bloquear e desbloquear niveis
+- [x] Coletaveis (frutas)
 
 
 ## ⚓ Link do apk:
-Para baixar o jogo, [Clicar Aqui!!!](https://github.com/RedneyMonteiro15/JohnLemon_Mobile)
+Para baixar o jogo, [Clicar Aqui!!!](https://www.mediafire.com/file/te9z0m4517ck0af/John_Lemon.apk/file)
 
 
 ## 👤 Lista dos desenvolvedores do projeto:
