@@ -21,8 +21,8 @@ Para baixar o jogo, [Clicar Aqui!!!](https://github.com/RedneyMonteiro15/JohnLem
 * [Redney Monteiro](https://github.com/RedneyMonteiro15)
 * [Jumara Fernandes](https://github.com/maura2020)
 
-## :books: Link do Site
-Para aceder ao site, basta [Clicar Aqui!!!](https://github.com/RedneyMonteiro15/JohnLemon_Mobile)
+## :books: Link do video
+Para aceder ao site, basta [Clicar Aqui!!!](https://youtu.be/mmRDynCpeUM)
 
 ## 📑 Licença
 Site com linecença MIT Lincense - [Veja Mais](https://en.wikipedia.org/wiki/MIT_License)
